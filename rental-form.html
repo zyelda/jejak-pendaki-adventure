@@ -1,65 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Penyewaan Alat Outdoor</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/logo.png">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Penyewaan - Jejak Pendaki</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/logo.png">
 </head>
 <body>
-    <div class="rental-container">
-        <h2 class="judul">Masukkan Data</h2>
-        <form id="rentalForm" class="rental-form">
-            <label for="name">Nama:</label>
-            <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Masukkan email">
-            
-            <label for="phone">Nomor HP:</label>
-            <input type="tel" id="phone" name="phone" required placeholder="Masukkan nomor HP Anda">
+  <div class="container">
+  
+    <form class="rental-form">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+      
+        <label for="alamat">Alamat Lengkap</label>
+        <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat lengkap" required>
+      
+        <label for="nohp">Nomor HP</label>
+        <input type="tel" id="nohp" name="nohp" placeholder="08xxxxxxxxxx" required inputmode="numeric" pattern="[0-9]*" maxlength="13">
+      
+        <label for="ktp">Upload Foto KTP</label>
+        <input type="file" id="ktp" name="ktp" accept="image/*" required>
+      
+        <label for="barang">Pilih Barang</label>
+        <select id="barang">
+          <option value="">-- Pilih Barang --</option>
+          <option value="Tenda 4L">Tenda 4L</option>
+          <option value="Tenda 2L">Tenda 2L</option>
+          <option value="Carrier">Carrier</option>
+          <option value="Sepatu Hiking">Sepatu Hiking</option>
+          <option value="Kursi Lipat">Kursi Lipat</option>
+          <option value="Meja Lipat">Meja Lipat</option>
+          <option value="Sleeping Bag">Sleeping Bag</option>
+          <option value="Kompor">Kompor</option>
+          <option value="Trekking Pole">Trekking Pole</option>
+          <option value="Cooking Set">Cooking Set</option>
+          <option value="Headlamp">Headlamp</option>
+          <option value="Matras">Matras</option>
+        </select>
 
-            <label for="rental-item">Pilih Alat:</label>
-            <select id="rental-item" name="rental-item">
-                <option value="" disabled selected>Pilih</option>
-                <option value="tenda">Tenda</option>
-                <option value="sleeping-bag">Sleeping Bag</option>
-                <option value="carrier">Carrier</option>
-                <option value="kompor">Kompor Portable</option>
-            </select>
+        <div class="selected-items" id="selected-items"></div>
+        <p class="limit-warning" id="limit-warning" style="display: none;">Maksimal 20 item ya!</p>
 
-            <label for="quantity">Jumlah:</label>
-            <select id="quantity" name="quantity" required>
-                <option value="" disabled selected>Pilih</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-            
-            <label for="days">Durasi Sewa (hari):</label>
-            <select id="days" name="days" required>
-                <option value="" disabled selected>Pilih</option>
-                <option value="1">1 Hari</option>
-                <option value="2">2 Hari</option>
-                <option value="3">3 Hari</option>
-                <option value="4">4 Hari</option>
-                <option value="5">5 Hari</option>
-                <option value="6">6 Hari</option>
-                <option value="7">7 Hari</option>
-            </select>
+        <button type="submit">Kirim</button>
+      </form>
 
-            <button type="submit">Sewa Sekarang</button>
-        </form>
-    </div>
-    
-    <script src="script.js"></script>
+    <div id="item-list"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -18,11 +18,7 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #18181b;
-  background: url('img/background.jpg') no-repeat;
-  background-size: cover;
-  color: #fff;
- 
+  background-image: url('img/background.jpg');
 }
 
 nav {
@@ -358,6 +354,37 @@ iframe {
 .rental-form select:focus {
   outline: none;
   border-color: #bbbbbc;
+}
+
+.selected-items {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.item-tag {
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.item-tag .remove-item {
+  margin-left: 8px;
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+.limit-warning {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  display: none;
 }
 
 @media screen and (max-width: 1024px) {
